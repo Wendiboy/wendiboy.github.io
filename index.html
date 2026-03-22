@@ -1,1042 +1,1143 @@
 <!doctype html>
 <html lang="ru">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Panelix — Маркетинговые исследования за минуты</title>
-		<script src="https://cdn.tailwindcss.com"></script>
-		<script src="https://unpkg.com/lucide@latest"></script>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-			rel="stylesheet"
-		/>
-		<script>
-			tailwind.config = {
-				theme: {
-					extend: {
-						fontFamily: { sans: ['Inter', 'sans-serif'] },
-						colors: {
-							mint: '#5CD3B4',
-							'mint-dark': '#3DB196',
-							navy: '#1a1f36',
-							dark: '#121729',
-							gray: '#6B7280',
-							'light-gray': '#9CA3AF',
-							border: '#E5E7EB',
-							purple: '#6366F1',
-							bg: '#F8FAFB',
-						},
-					},
-				},
-			}
-		</script>
-		<style>
-			body {
-				background: #f8fafb;
-				color: #1a1f36;
-			}
-			.gradient-text {
-				background: linear-gradient(135deg, #5cd3b4 0%, #3b82f6 100%);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-			}
-			.mesh-bg {
-				background:
-					radial-gradient(
-						at 20% 30%,
-						rgba(92, 211, 180, 0.15) 0px,
-						transparent 50%
-					),
-					radial-gradient(
-						at 80% 20%,
-						rgba(99, 102, 241, 0.1) 0px,
-						transparent 50%
-					),
-					radial-gradient(
-						at 40% 80%,
-						rgba(92, 211, 180, 0.1) 0px,
-						transparent 50%
-					);
-			}
-			@keyframes float {
-				0%,
-				100% {
-					transform: translateY(0);
-				}
-				50% {
-					transform: translateY(-15px);
-				}
-			}
-			.float {
-				animation: float 5s ease-in-out infinite;
-			}
-			.float-delay {
-				animation: float 5s ease-in-out infinite;
-				animation-delay: 2s;
-			}
 
-			.card-hover {
-				transition: all 0.3s ease;
-			}
-			.card-hover:hover {
-				transform: translateY(-5px);
-				box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
-			}
-		</style>
-	</head>
-	<body class="font-sans antialiased">
-		<!-- Nav -->
-		<nav
-			class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-border/50"
-		>
-			<div
-				class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between"
-			>
-				<div class="flex items-center gap-2">
-					<div
-						class="w-8 h-8 bg-mint rounded-lg flex items-center justify-center text-white font-bold"
-					>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Panelix - Цифровые двойники аудитории</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+		rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+
+<body class="bg-slate-50">
+	<!-- Navigation - Compact -->
+	<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50">
+		<div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+			<div class="flex items-center gap-3">
+				<!-- <div
+						class="w-9 h-9 mint-gradient rounded-lg flex items-center justify-center text-white font-bold text-base">
 						P
-					</div>
-					<span class="font-bold text-navy text-lg">Panelix</span>
-				</div>
-				<div class="hidden md:flex gap-8 text-sm font-medium text-gray">
-					<a href="#how" class="hover:text-navy">Как работает</a>
-					<a href="#features" class="hover:text-navy">Возможности</a>
-					<a href="#science" class="hover:text-navy">Наука</a>
-					<a href="#cases" class="hover:text-navy">Применение</a>
-				</div>
-				<button
-					class="px-4 py-2 bg-navy text-white text-sm font-semibold rounded-lg hover:bg-opacity-90"
-				>
-					Начать
-				</button>
+					</div> -->
+				<span class="text-2xl font-black tracking-tighter text-slate-900">PANELIX</span>
 			</div>
-		</nav>
-
-		<!-- Hero -->
-		<section class="pt-32 pb-20 mesh-bg min-h-screen flex items-center">
-			<div class="max-w-7xl mx-auto px-6 w-full">
-				<div class="grid lg:grid-cols-2 gap-12 items-center">
-					<div class="space-y-6">
-						<div
-							class="inline-flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-border text-sm"
-						>
-							<span class="w-2 h-2 bg-mint rounded-full animate-pulse"></span>
-							<span>Точность 90% подтверждена исследованиями</span>
-						</div>
-
-						<h1 class="text-5xl md:text-6xl font-bold leading-tight">
-							Исследуйте рынок<br />
-							<span class="gradient-text">за минуты</span>,<br />
-							не за месяцы
-						</h1>
-
-						<p class="text-lg text-gray max-w-lg">
-							Тысячи цифровых двойников вашей аудитории отвечают на вопросы за
-							час. Получите инсайты, которые раньше требовали недель и сотен
-							тысяч рублей.
-						</p>
-
-						<div class="flex gap-4">
-							<button
-								class="px-6 py-3 bg-mint text-white font-semibold rounded-lg shadow-lg hover:bg-mint-dark transition"
-							>
-								Запустить исследование
-							</button>
-							<button
-								class="px-6 py-3 bg-white text-navy border border-border font-semibold rounded-lg hover:border-mint transition"
-							>
-								Смотреть демо
-							</button>
-						</div>
-
-						<div class="flex gap-6 pt-4">
-							<div class="flex items-center gap-3">
-								<div
-									class="w-10 h-10 bg-mint/10 rounded-xl flex items-center justify-center text-mint font-bold"
-								>
-									95%
-								</div>
-								<div class="text-sm">
-									<div class="font-semibold">экономия времени</div>
-									<div class="text-gray">5 мин vs 5 недель</div>
-								</div>
-							</div>
-							<div class="flex items-center gap-3">
-								<div
-									class="w-10 h-10 bg-purple/10 rounded-xl flex items-center justify-center text-purple font-bold"
-								>
-									0₽
-								</div>
-								<div class="text-sm">
-									<div class="font-semibold">рекрутинг</div>
-									<div class="text-gray">только AI-агенты</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Dashboard -->
-					<div class="relative float">
-						<div
-							class="bg-white rounded-2xl shadow-xl border border-border overflow-hidden"
-						>
-							<div
-								class="bg-bg border-b border-border px-4 py-3 flex items-center gap-2"
-							>
-								<div class="flex gap-1.5">
-									<div class="w-3 h-3 rounded-full bg-red-400"></div>
-									<div class="w-3 h-3 rounded-full bg-amber-400"></div>
-									<div class="w-3 h-3 rounded-full bg-green-400"></div>
-								</div>
-								<div class="flex-1 text-center text-xs text-gray">
-									panelix.ai
-								</div>
-							</div>
-
-							<div class="p-6 space-y-4">
-								<div class="grid grid-cols-2 gap-4">
-									<div class="bg-bg rounded-xl p-4 border border-border">
-										<div class="flex items-center gap-2 mb-2">
-											<i data-lucide="users" class="w-4 h-4 text-mint"></i>
-											<span class="text-xs text-gray uppercase"
-												>Всего респондентов</span
-											>
-										</div>
-										<div class="text-3xl font-bold">1052</div>
-										<div
-											class="text-xs text-green-600 flex items-center gap-1 mt-1"
-										>
-											<i data-lucide="trending-up" class="w-3 h-3"></i> +100%
-											выполнено
-										</div>
-									</div>
-									<div class="bg-bg rounded-xl p-4 border border-border">
-										<div class="flex items-center gap-2 mb-2">
-											<i
-												data-lucide="bar-chart-2"
-												class="w-4 h-4 text-mint"
-											></i>
-											<span class="text-xs text-gray uppercase"
-												>Средний балл PMF</span
-											>
-										</div>
-										<div class="text-3xl font-bold">
-											3.6<span class="text-lg text-gray font-normal">/5</span>
-										</div>
-										<div class="text-xs text-gray flex items-center gap-1 mt-1">
-											<i data-lucide="check-circle" class="w-3 h-3"></i>
-											Рассчитано на основе SSR
-										</div>
-									</div>
-								</div>
-
-								<div class="bg-bg rounded-xl p-4 border border-border">
-									<div class="text-sm font-semibold mb-1">
-										PMF Распределение
-									</div>
-									<div class="text-xs text-gray mb-4">
-										Агрегированное распределение ответов
-									</div>
-
-									<div class="h-32 flex items-end gap-2">
-										<div class="flex-1 flex flex-col items-center gap-1">
-											<div
-												class="w-full bg-mint/20 rounded-t"
-												style="height: 20px"
-											></div>
-											<span class="text-[10px] text-gray"
-												>Очень<br />негативно</span
-											>
-										</div>
-										<div class="flex-1 flex flex-col items-center gap-1">
-											<div
-												class="w-full bg-mint/30 rounded-t"
-												style="height: 35px"
-											></div>
-											<span class="text-[10px] text-gray">Негативно</span>
-										</div>
-										<div class="flex-1 flex flex-col items-center gap-1">
-											<div
-												class="w-full bg-mint/40 rounded-t"
-												style="height: 50px"
-											></div>
-											<span class="text-[10px] text-gray"
-												>Скорее<br />негативно</span
-											>
-										</div>
-										<div class="flex-1 flex flex-col items-center gap-1">
-											<div
-												class="w-full bg-mint rounded-t shadow-lg shadow-mint/30"
-												style="height: 85px"
-											></div>
-											<span class="text-[10px] text-navy font-bold"
-												>Скорее<br />позитивно</span
-											>
-										</div>
-										<div class="flex-1 flex flex-col items-center gap-1">
-											<div
-												class="w-full bg-mint/50 rounded-t"
-												style="height: 65px"
-											></div>
-											<span class="text-[10px] text-gray">Позитивно</span>
-										</div>
-										<div class="flex-1 flex flex-col items-center gap-1">
-											<div
-												class="w-full bg-mint/30 rounded-t"
-												style="height: 40px"
-											></div>
-											<span class="text-[10px] text-gray"
-												>Очень<br />позитивно</span
-											>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="absolute -top-3 -right-3 bg-white p-3 rounded-xl shadow-lg border border-border float-delay"
-						>
-							<div class="flex items-center gap-2">
-								<div class="w-2 h-2 bg-mint rounded-full"></div>
-								<span class="text-sm font-medium">7 кластеров найдено</span>
-							</div>
-						</div>
-					</div>
-				</div>
+			<div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+				<a href="#" class="hover:text-slate-900 transition">Как работает</a>
+				<a href="#" class="hover:text-slate-900 transition">Возможности</a>
+				<a href="#" class="hover:text-slate-900 transition">Применение</a>
+				<a href="#" class="hover:text-slate-900 transition">Цены</a>
+				<a href="#" class="hover:text-slate-900 transition">FAQ</a>
 			</div>
-		</section>
+			<button
+				class="bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition">
+				Начать
+			</button>
+		</div>
+	</nav>
 
-		<!-- How it Works -->
-		<section id="how" class="py-20 bg-white">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="text-center max-w-2xl mx-auto mb-16">
-					<span class="text-mint font-semibold text-sm uppercase tracking-wider"
-						>Silicon Sampling</span
-					>
-					<h2 class="text-4xl font-bold mt-2 mb-4">Как это работает</h2>
-					<p class="text-gray text-lg">
-						Пять шагов от гипотезы до стратегических инсайтов
-					</p>
-				</div>
-
-				<div class="grid md:grid-cols-5 gap-4">
-					<div
-						class="card-hover bg-bg rounded-2xl p-6 border border-border text-center"
-					>
-						<div
-							class="w-12 h-12 bg-mint/10 rounded-xl flex items-center justify-center mx-auto mb-4"
-						>
-							<i data-lucide="sliders" class="w-6 h-6 text-mint"></i>
-						</div>
-						<div class="text-3xl font-bold text-mint/20 mb-2">01</div>
-						<h3 class="font-semibold mb-2">Параметры</h3>
-						<p class="text-sm text-gray">
-							Задайте демографию и психографию аудитории
-						</p>
-					</div>
-
-					<div
-						class="card-hover bg-bg rounded-2xl p-6 border border-border text-center"
-					>
-						<div
-							class="w-12 h-12 bg-mint/10 rounded-xl flex items-center justify-center mx-auto mb-4"
-						>
-							<i data-lucide="users" class="w-6 h-6 text-mint"></i>
-						</div>
-						<div class="text-3xl font-bold text-mint/20 mb-2">02</div>
-						<h3 class="font-semibold mb-2">Генерация</h3>
-						<p class="text-sm text-gray">
-							AI создаёт тысячи цифровых двойников
-						</p>
-					</div>
-
-					<div
-						class="card-hover bg-bg rounded-2xl p-6 border border-border text-center"
-					>
-						<div
-							class="w-12 h-12 bg-mint/10 rounded-xl flex items-center justify-center mx-auto mb-4"
-						>
-							<i data-lucide="message-square" class="w-6 h-6 text-mint"></i>
-						</div>
-						<div class="text-3xl font-bold text-mint/20 mb-2">03</div>
-						<h3 class="font-semibold mb-2">Опрос</h3>
-						<p class="text-sm text-gray">
-							Глубинные интервью с развёрнутыми ответами
-						</p>
-					</div>
-
-					<div
-						class="card-hover bg-bg rounded-2xl p-6 border border-border text-center"
-					>
-						<div
-							class="w-12 h-12 bg-purple/10 rounded-xl flex items-center justify-center mx-auto mb-4"
-						>
-							<i data-lucide="git-compare" class="w-6 h-6 text-purple"></i>
-						</div>
-						<div class="text-3xl font-bold text-purple/20 mb-2">04</div>
-						<h3 class="font-semibold mb-2">SSR-анализ</h3>
-						<p class="text-sm text-gray">
-							Семантические якоря в количественные рейтинги
-						</p>
-					</div>
-
-					<div
-						class="card-hover bg-bg rounded-2xl p-6 border border-border text-center"
-					>
-						<div
-							class="w-12 h-12 bg-purple/10 rounded-xl flex items-center justify-center mx-auto mb-4"
-						>
-							<i data-lucide="share-2" class="w-6 h-6 text-purple"></i>
-						</div>
-						<div class="text-3xl font-bold text-purple/20 mb-2">05</div>
-						<h3 class="font-semibold mb-2">Кластеры</h3>
-						<p class="text-sm text-gray">
-							Группировка по убеждениям и поведению
-						</p>
-					</div>
-				</div>
-
-				<!-- Agent Examples -->
-				<div class="grid md:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto">
-					<div class="bg-bg rounded-2xl p-6 border border-border card-hover">
-						<div class="flex gap-4">
-							<div
-								class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold"
-							>
-								АП
-							</div>
-							<div class="flex-1">
-								<div class="flex items-center gap-2 mb-1">
-									<h4 class="font-semibold">Пенсионер из Самары</h4>
-									<span
-										class="px-2 py-0.5 bg-amber-100 text-amber-700 text-xs rounded-full"
-										>65 лет</span
-									>
-								</div>
-								<p class="text-sm text-gray mb-3">
-									Бывший инженер, скептик к новым технологиям, ценит личное
-									общение.
-								</p>
-								<div
-									class="bg-white rounded-lg p-3 text-sm border border-border"
-								>
-									<span class="text-gray text-xs">Ответ:</span>
-									<p class="italic mt-1">
-										«Мне непонятно, как это работает. Я привык, когда со мной
-										разговаривают люди...»
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="bg-bg rounded-2xl p-6 border border-border card-hover">
-						<div class="flex gap-4">
-							<div
-								class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-bold"
-							>
-								АЗ
-							</div>
-							<div class="flex-1">
-								<div class="flex items-center gap-2 mb-1">
-									<h4 class="font-semibold">Зумер из Москвы</h4>
-									<span
-										class="px-2 py-0.5 bg-mint/20 text-mint-dark text-xs rounded-full"
-										>24 года</span
-									>
-								</div>
-								<p class="text-sm text-gray mb-3">
-									Маркетолог, early adopter, ценит скорость и инновации.
-								</p>
-								<div
-									class="bg-white rounded-lg p-3 text-sm border border-border"
-								>
-									<span class="text-gray text-xs">Ответ:</span>
-									<p class="italic mt-1">
-										«Наконец-то! Я готов попробовать всё, что экономит моё
-										время.»
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+	<!-- Hero Section -->
+	<section class="min-h-screen pt-20 pb-12 relative overflow-hidden">
+		<!-- Background Elements -->
+		<div class="absolute inset-0 overflow-hidden pointer-events-none">
+			<div class="absolute top-20 left-10 w-72 h-72 bg-emerald-200/30 rounded-full blur-3xl"></div>
+			<div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl"></div>
+			<div
+				class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-emerald-100/50 to-blue-100/50 rounded-full blur-3xl">
 			</div>
-		</section>
+		</div>
 
-		<!-- Features -->
-		<section id="features" class="py-20 bg-bg mesh-bg">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="text-center max-w-2xl mx-auto mb-16">
-					<h2 class="text-4xl font-bold mb-4">Возможности</h2>
-					<p class="text-gray text-lg">
-						Всё необходимое для глубокого понимания аудитории
-					</p>
-				</div>
-
-				<div class="grid md:grid-cols-3 gap-6">
-					<div class="bg-white rounded-2xl p-6 border border-border card-hover">
-						<div
-							class="w-12 h-12 bg-mint/10 rounded-xl flex items-center justify-center mb-4"
-						>
-							<i data-lucide="users" class="w-6 h-6 text-mint"></i>
-						</div>
-						<h3 class="font-semibold text-lg mb-2">Генерация аудитории</h3>
-						<p class="text-gray text-sm">
-							Создавайте тысячи цифровых двойников с заданными характеристиками.
-						</p>
-					</div>
-
-					<div class="bg-white rounded-2xl p-6 border border-border card-hover">
-						<div
-							class="w-12 h-12 bg-mint/10 rounded-xl flex items-center justify-center mb-4"
-						>
-							<i data-lucide="message-circle" class="w-6 h-6 text-mint"></i>
-						</div>
-						<h3 class="font-semibold text-lg mb-2">AI-опросы</h3>
-						<p class="text-gray text-sm">
-							Глубинные интервью, где каждый агент отвечает из своего опыта.
-						</p>
-					</div>
-
-					<div class="bg-white rounded-2xl p-6 border border-border card-hover">
-						<div
-							class="w-12 h-12 bg-mint/10 rounded-xl flex items-center justify-center mb-4"
-						>
-							<i data-lucide="bar-chart-2" class="w-6 h-6 text-mint"></i>
-						</div>
-						<h3 class="font-semibold text-lg mb-2">SSR-рейтинги</h3>
-						<p class="text-gray text-sm">
-							Переводите текст в количественные показатели семантическими
-							якорями.
-						</p>
-					</div>
-
-					<div class="bg-white rounded-2xl p-6 border border-border card-hover">
-						<div
-							class="w-12 h-12 bg-purple/10 rounded-xl flex items-center justify-center mb-4"
-						>
-							<i data-lucide="network" class="w-6 h-6 text-purple"></i>
-						</div>
-						<h3 class="font-semibold text-lg mb-2">Кластер-карта</h3>
-						<p class="text-gray text-sm">
-							Интерактивная визуализация семантических кластеров аудитории.
-						</p>
-					</div>
-
-					<div class="bg-white rounded-2xl p-6 border border-border card-hover">
-						<div
-							class="w-12 h-12 bg-purple/10 rounded-xl flex items-center justify-center mb-4"
-						>
-							<i data-lucide="messages-square" class="w-6 h-6 text-purple"></i>
-						</div>
-						<h3 class="font-semibold text-lg mb-2">Чат с аудиторией</h3>
-						<p class="text-gray text-sm">
-							Войдите в диалог с любым респондентом для уточняющих вопросов.
-						</p>
-					</div>
-
-					<div class="bg-white rounded-2xl p-6 border border-border card-hover">
-						<div
-							class="w-12 h-12 bg-purple/10 rounded-xl flex items-center justify-center mb-4"
-						>
-							<i data-lucide="brain" class="w-6 h-6 text-purple"></i>
-						</div>
-						<h3 class="font-semibold text-lg mb-2">Экспертная аналитика</h3>
-						<p class="text-gray text-sm">
-							AI находит скрытые сегменты и даёт стратегические рекомендации.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Science -->
-		<section id="science" class="py-20 bg-dark text-white">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="grid lg:grid-cols-2 gap-12 items-center">
-					<div>
-						<span
-							class="text-mint font-semibold text-sm uppercase tracking-wider"
-							>Научная валидация</span
-						>
-						<h2 class="text-4xl font-bold mt-2 mb-6">Доказательная база</h2>
-						<p class="text-gray-400 text-lg mb-8">
-							Технология валидирована ведущими исследовательскими центрами мира.
-						</p>
-
-						<div class="space-y-6">
-							<div class="flex gap-4">
-								<div
-									class="w-14 h-14 bg-mint/20 rounded-xl flex items-center justify-center flex-shrink-0"
-								>
-									<span class="text-mint font-bold">85%</span>
-								</div>
-								<div>
-									<h4 class="font-semibold mb-1">Стэнфорд</h4>
-									<p class="text-sm text-gray-400">
-										Генеративные агенты 1,052 людей показали точность, сравнимую
-										с повторными ответами.
-									</p>
-								</div>
-							</div>
-
-							<div class="flex gap-4">
-								<div
-									class="w-14 h-14 bg-mint/20 rounded-xl flex items-center justify-center flex-shrink-0"
-								>
-									<span class="text-mint font-bold">90%</span>
-								</div>
-								<div>
-									<h4 class="font-semibold mb-1">Таллинн</h4>
-									<p class="text-sm text-gray-400">
-										SSR-метод достигает 90% надёжности test-retest при KS >
-										0.85.
-									</p>
-								</div>
-							</div>
-
-							<div class="flex gap-4">
-								<div
-									class="w-14 h-14 bg-mint/20 rounded-xl flex items-center justify-center flex-shrink-0"
-								>
-									<span class="text-mint font-bold">9K+</span>
-								</div>
-								<div>
-									<h4 class="font-semibold mb-1">Ухань</h4>
-									<p class="text-sm text-gray-400">
-										Верификация на 9,300+ человеко-ответах в 57 опросах.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-
+		<div class="max-w-7xl mx-auto px-6 relative z-10">
+			<div class="grid lg:grid-cols-2 gap-8 items-start min-h-[85vh] pt-6">
+				<!-- Left Content -->
+				<div class="space-y-8 sticky top-28">
 					<div class="space-y-4">
-						<a
-							href="https://arxiv.org/abs/2411.10109"
-							target="_blank"
-							class="block bg-navy rounded-xl p-5 border border-gray-800 hover:border-mint/50 transition"
-						>
-							<div class="flex items-center justify-between">
-								<div class="flex items-center gap-3">
-									<div
-										class="w-10 h-10 bg-mint/20 rounded-lg flex items-center justify-center"
-									>
-										<i data-lucide="building-2" class="w-5 h-5 text-mint"></i>
-									</div>
-									<div>
-										<h4 class="font-semibold">Стэнфорд</h4>
-										<p class="text-sm text-gray-400">
-											Generative Agent Simulations
-										</p>
-									</div>
-								</div>
-								<i
-									data-lucide="external-link"
-									class="w-5 h-5 text-gray-600"
-								></i>
-							</div>
-						</a>
-
-						<a
-							href="https://arxiv.org/abs/2510.08338"
-							target="_blank"
-							class="block bg-navy rounded-xl p-5 border border-gray-800 hover:border-mint/50 transition"
-						>
-							<div class="flex items-center justify-between">
-								<div class="flex items-center gap-3">
-									<div
-										class="w-10 h-10 bg-mint/20 rounded-lg flex items-center justify-center"
-									>
-										<i data-lucide="landmark" class="w-5 h-5 text-mint"></i>
-									</div>
-									<div>
-										<h4 class="font-semibold">Таллинн</h4>
-										<p class="text-sm text-gray-400">
-											LLMs Reproduce Human Purchase Intent
-										</p>
-									</div>
-								</div>
-								<i
-									data-lucide="external-link"
-									class="w-5 h-5 text-gray-600"
-								></i>
-							</div>
-						</a>
-
-						<a
-							href="https://arxiv.org/abs/2411.01582"
-							target="_blank"
-							class="block bg-navy rounded-xl p-5 border border-gray-800 hover:border-mint/50 transition"
-						>
-							<div class="flex items-center justify-between">
-								<div class="flex items-center gap-3">
-									<div
-										class="w-10 h-10 bg-mint/20 rounded-lg flex items-center justify-center"
-									>
-										<i
-											data-lucide="graduation-cap"
-											class="w-5 h-5 text-mint"
-										></i>
-									</div>
-									<div>
-										<h4 class="font-semibold">Ухань</h4>
-										<p class="text-sm text-gray-400">
-											Simulating Public Opinions with LLMs
-										</p>
-									</div>
-								</div>
-								<i
-									data-lucide="external-link"
-									class="w-5 h-5 text-gray-600"
-								></i>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Cluster Map -->
-		<section class="py-20 bg-white">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="grid lg:grid-cols-2 gap-12 items-center">
-					<div class="order-2">
-						<div class="bg-dark rounded-2xl p-6">
-							<div class="flex items-center justify-between mb-4">
-								<div class="flex items-center gap-2">
-									<i data-lucide="network" class="w-5 h-5 text-mint"></i>
-									<span class="font-semibold text-white">Кластер-карта</span>
-								</div>
-								<span class="text-sm text-gray-400"
-									>7 кластеров • 110 точек</span
-								>
-							</div>
-
-							<div
-								class="aspect-video bg-navy rounded-xl relative overflow-hidden border border-gray-800"
-							>
-								<div
-									class="absolute inset-0 opacity-20"
-									style="
-										background-image:
-											linear-gradient(
-												rgba(92, 211, 180, 0.1) 1px,
-												transparent 1px
-											),
-											linear-gradient(
-												90deg,
-												rgba(92, 211, 180, 0.1) 1px,
-												transparent 1px
-											);
-										background-size: 40px 40px;
-									"
-								></div>
-
-								<div
-									class="absolute top-1/4 left-1/4 w-28 h-28 rounded-full border-2 border-dashed border-mint/30 flex items-center justify-center"
-								>
-									<div class="flex gap-1 flex-wrap justify-center w-8">
-										<div class="w-2 h-2 rounded-full bg-mint"></div>
-										<div class="w-2 h-2 rounded-full bg-green-400"></div>
-										<div class="w-2 h-2 rounded-full bg-mint"></div>
-									</div>
-								</div>
-
-								<div
-									class="absolute bottom-1/3 right-1/4 w-24 h-24 rounded-full border-2 border-dashed border-purple/30 flex items-center justify-center"
-								>
-									<div class="flex gap-1 flex-wrap justify-center w-8">
-										<div class="w-2 h-2 rounded-full bg-orange-400"></div>
-										<div class="w-2 h-2 rounded-full bg-red-400"></div>
-									</div>
-								</div>
-
-								<div
-									class="absolute bottom-4 left-4 bg-navy/90 rounded-lg p-3 border border-gray-700"
-								>
-									<div class="text-[10px] text-gray-400 mb-1">PMF SCORE</div>
-									<div class="flex items-center gap-2">
-										<div class="w-2 h-2 rounded-full bg-red-500"></div>
-										<span class="text-[10px] text-gray-300">&lt; 2.0</span>
-									</div>
-									<div class="flex items-center gap-2 mt-1">
-										<div class="w-2 h-2 rounded-full bg-mint"></div>
-										<span class="text-[10px] text-gray-300">3.5-4.2</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="mt-4 bg-white rounded-xl p-4">
-								<div class="flex items-center gap-3 mb-3">
-									<div
-										class="w-10 h-10 bg-purple/10 rounded-lg flex items-center justify-center"
-									>
-										<i data-lucide="users" class="w-5 h-5 text-purple"></i>
-									</div>
-									<div>
-										<h4 class="font-semibold text-navy text-sm">
-											Технологичные занятые родители
-										</h4>
-										<p class="text-xs text-gray">15 респондентов • PMF 3.5</p>
-									</div>
-								</div>
-								<div class="bg-bg rounded-lg p-3">
-									<div class="flex items-center gap-2 mb-1">
-										<i data-lucide="sparkles" class="w-3 h-3 text-mint"></i>
-										<span class="text-[10px] font-semibold text-mint uppercase"
-											>AI Insight</span
-										>
-									</div>
-									<p class="text-xs text-gray">
-										Акцентируйте маркетинг на экономии времени для занятых
-										родителей.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="order-1">
-						<span
-							class="text-purple font-semibold text-sm uppercase tracking-wider"
-							>Визуализация</span
-						>
-						<h2 class="text-4xl font-bold mt-2 mb-4">
-							Увидьте лес за деревьями
-						</h2>
-						<p class="text-gray text-lg mb-6">
-							Кластер-карта превращает тысячи ответов в наглядную картину.
-							Найдите скрытые сегменты, которые не видны в таблицах.
+						<h1 class="text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+							Превратите идеи<br />
+							<span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-600">в
+								выгодные решения</span>
+						</h1>
+						<p class="text-xl text-slate-600 leading-relaxed max-w-lg">
+							Проверяйте гипотезы на
+							<span class="text-emerald-600 font-semibold">цифровых двойниках</span>
+							целевой аудитории
 						</p>
+					</div>
 
-						<div class="space-y-4">
-							<div class="flex gap-3">
-								<div
-									class="w-8 h-8 bg-mint/10 rounded-lg flex items-center justify-center flex-shrink-0"
-								>
-									<i
-										data-lucide="mouse-pointer-2"
-										class="w-4 h-4 text-mint"
-									></i>
+					<p class="text-slate-500 leading-relaxed max-w-md text-lg">
+						Тысячи цифровых респондентов отвечают на вопросы за минуты.
+						Поймите своих потребителей, получите инсайты, которые раньше
+						требовали больших затрат.
+					</p>
+
+					<div class="flex gap-4 pt-4">
+						<button
+							class="mint-gradient text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg hover:shadow-emerald-500/25 transition transform hover:-translate-y-0.5">
+							Попробовать
+						</button>
+						<button
+							class="px-8 py-4 rounded-xl font-semibold text-slate-700 border-2 border-slate-200 hover:border-slate-300 transition flex items-center gap-2">
+							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+									d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
+								</path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+									d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+							</svg>
+							Демо
+						</button>
+					</div>
+				</div>
+
+				<!-- Right Content - Diagonal Windows -->
+				<div class="windows-container relative">
+					<!-- Window 1: Question & PMF Chart -->
+					<div class="demo-window glass-panel rounded-2xl p-4 window-pos-1" id="window1">
+						<!-- Question Display -->
+						<div class="bg-slate-50 rounded-xl p-4 mb-1 border border-slate-100">
+							<span
+								class="text-xs font-semibold text-emerald-600 uppercase tracking-wider mb-2 block">Вопрос
+								респондентам</span>
+							<p class="text-sm text-slate-700 leading-relaxed typing-cursor min-h-[50px]"
+								id="questionText"></p>
+						</div>
+
+						<!-- PMF Score - Fixed layout with label on left -->
+						<div class="flex items-center justify-between mb-6 px-1">
+							<div class="text-left">
+								<div class="text-xs font-semibold" id="pmfLabel">
+									Высокий риск оттока
 								</div>
-								<div>
-									<h4 class="font-semibold">Исследуйте каждую точку</h4>
-									<p class="text-sm text-gray">
-										Кликните на респондента — увидите его профиль
+							</div>
+							<div class="text-right">
+								<div class="text-1xl font-bold text-slate-800" id="pmfScore">
+									2.4<span class="text-sm text-slate-400 font-normal">/5</span>
+								</div>
+							</div>
+						</div>
+
+						<!-- Chart Bars -->
+						<div class="flex items-end justify-between h-24 gap-5" id="chartContainer">
+							<!-- Bars generated by JS -->
+						</div>
+					</div>
+
+					<!-- Window 2: Cluster Analysis -->
+					<div class="demo-window glass-panel rounded-2xl p-4 window-pos-2" id="window2">
+						<div class="flex items-center justify-between mb-3">
+							<h4 class="font-semibold text-slate-800 text-sm">
+								Кластерный анализ
+							</h4>
+							<span class="text-xs px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full font-medium"
+								id="clusterCount">3 кластера</span>
+						</div>
+
+						<!-- Cluster Map Visualization -->
+						<div
+							class="relative h-36 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl border border-slate-200 overflow-hidden mb-3">
+							<svg class="absolute inset-0 w-full h-full" id="clusterSvg">
+								<line x1="30%" y1="40%" x2="60%" y2="30%" stroke="#cbd5e1" stroke-width="1"
+									stroke-dasharray="4,4" class="opacity-50" />
+								<line x1="60%" y1="30%" x2="75%" y2="65%" stroke="#cbd5e1" stroke-width="1"
+									stroke-dasharray="4,4" class="opacity-50" />
+								<line x1="30%" y1="40%" x2="75%" y2="65%" stroke="#cbd5e1" stroke-width="1"
+									stroke-dasharray="4,4" class="opacity-50" />
+							</svg>
+
+							<!-- Cluster 1 -->
+							<div class="absolute left-[20%] top-[30%] cluster-node cursor-pointer" id="cluster1">
+								<div
+									class="w-12 h-12 rounded-full bg-red-100 border-2 border-red-400 flex items-center justify-center cluster-pulse">
+									<span class="text-[10px] font-bold text-red-600" id="cluster1Size">62%</span>
+								</div>
+								<div class="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap">
+									<p class="text-[9px] font-semibold text-slate-700" id="cluster1Name">
+										Прагматики
+									</p>
+									<p class="text-[8px] text-slate-500">
+										PMF: <span id="cluster1PMF">1.8</span>
 									</p>
 								</div>
 							</div>
-							<div class="flex gap-3">
+
+							<!-- Cluster 2 -->
+							<div class="absolute left-[55%] top-[20%] cluster-node cursor-pointer" id="cluster2">
 								<div
-									class="w-8 h-8 bg-mint/10 rounded-lg flex items-center justify-center flex-shrink-0"
-								>
-									<i data-lucide="palette" class="w-4 h-4 text-mint"></i>
+									class="w-10 h-10 rounded-full bg-emerald-100 border-2 border-emerald-400 flex items-center justify-center">
+									<span class="text-[9px] font-bold text-emerald-600" id="cluster2Size">18%</span>
 								</div>
-								<div>
-									<h4 class="font-semibold">Цветовая кодировка PMF</h4>
-									<p class="text-sm text-gray">
-										Мгновенно оценивайте восприятие по цвету
+								<div class="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap">
+									<p class="text-[9px] font-semibold text-slate-700" id="cluster2Name">
+										Эко-активисты
+									</p>
+									<p class="text-[8px] text-slate-500">
+										PMF: <span id="cluster2PMF">4.6</span>
 									</p>
 								</div>
+							</div>
+
+							<!-- Cluster 3 -->
+							<div class="absolute left-[70%] top-[55%] cluster-node cursor-pointer" id="cluster3">
+								<div
+									class="w-10 h-10 rounded-full bg-blue-100 border-2 border-blue-400 flex items-center justify-center">
+									<span class="text-[9px] font-bold text-blue-600" id="cluster3Size">20%</span>
+								</div>
+								<div class="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap">
+									<p class="text-[9px] font-semibold text-slate-700" id="cluster3Name">
+										Инертные
+									</p>
+									<p class="text-[8px] text-slate-500">
+										PMF: <span id="cluster3PMF">3.1</span>
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="bg-amber-50 border border-amber-200 rounded-lg p-2">
+							<p class="text-xs text-amber-800 leading-relaxed" id="recommendation">
+								<span class="font-semibold">Рекомендация:</span> Внедрение
+								мембраны без фиксации цены приведет к потере 14-18% доли
+								рынка.
+							</p>
+						</div>
+					</div>
+
+					<!-- Window 3: Respondent Answers -->
+					<div class="demo-window glass-panel rounded-2xl p-4 window-pos-3" id="window3">
+						<div class="flex items-center justify-between mb-3">
+							<h4 class="font-semibold text-slate-800 text-sm">
+								Ответы респондентов
+							</h4>
+							<div class="flex items-center gap-1">
+								<div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+								<span class="text-xs text-slate-500">Live</span>
+							</div>
+						</div>
+
+						<div class="space-y-2 max-h-[140px] overflow-hidden relative" id="answersContainer">
+							<div
+								class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/80 pointer-events-none z-10">
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
 
-		<!-- Use Cases -->
-		<section id="cases" class="py-20 bg-bg">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="text-center max-w-2xl mx-auto mb-16">
-					<h2 class="text-4xl font-bold mb-4">Для кого это?</h2>
-					<p class="text-gray text-lg">Три ключевых сценария использования</p>
+			<!-- Scenario Indicators -->
+			<div class="flex justify-center gap-2 mt-8 pb-8">
+				<div class="scenario-indicator active w-2 h-2 rounded-full bg-slate-300 cursor-pointer"
+					data-scenario="0"></div>
+				<div class="scenario-indicator w-2 h-2 rounded-full bg-slate-300 cursor-pointer" data-scenario="1">
 				</div>
-
-				<div class="grid md:grid-cols-3 gap-6">
-					<div
-						class="bg-white rounded-2xl overflow-hidden border border-border card-hover"
-					>
-						<div class="h-1 bg-purple"></div>
-						<div class="p-6">
-							<div
-								class="w-12 h-12 bg-purple/10 rounded-xl flex items-center justify-center mb-4"
-							>
-								<i data-lucide="pen-tool" class="w-6 h-6 text-purple"></i>
-							</div>
-							<h3 class="font-bold text-xl mb-2">Копирайтеры</h3>
-							<p class="text-gray text-sm mb-4">
-								Тестируйте десятки вариантов заголовков за день. Узнайте, как
-								сегменты воспринимают тексты.
-							</p>
-							<ul class="space-y-2 text-sm">
-								<li class="flex items-center gap-2 text-gray">
-									<i data-lucide="check" class="w-4 h-4 text-mint"></i> A/B
-									тестирование слоганов
-								</li>
-								<li class="flex items-center gap-2 text-gray">
-									<i data-lucide="check" class="w-4 h-4 text-mint"></i> Проверка
-									тональности
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<div
-						class="bg-white rounded-2xl overflow-hidden border border-border card-hover"
-					>
-						<div class="h-1 bg-mint"></div>
-						<div class="p-6">
-							<div
-								class="w-12 h-12 bg-mint/10 rounded-xl flex items-center justify-center mb-4"
-							>
-								<i data-lucide="package" class="w-6 h-6 text-mint"></i>
-							</div>
-							<h3 class="font-bold text-xl mb-2">Product-менеджеры</h3>
-							<p class="text-gray text-sm mb-4">
-								Проверяйте гипотезы перед разработкой. Экономьте ресурсы на
-								ненужных фичах.
-							</p>
-							<ul class="space-y-2 text-sm">
-								<li class="flex items-center gap-2 text-gray">
-									<i data-lucide="check" class="w-4 h-4 text-mint"></i>
-									Валидация идей
-								</li>
-								<li class="flex items-center gap-2 text-gray">
-									<i data-lucide="check" class="w-4 h-4 text-mint"></i>
-									Приоритизация фич
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<div
-						class="bg-white rounded-2xl overflow-hidden border border-border card-hover"
-					>
-						<div class="h-1 bg-amber-400"></div>
-						<div class="p-6">
-							<div
-								class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4"
-							>
-								<i data-lucide="rocket" class="w-6 h-6 text-amber-600"></i>
-							</div>
-							<h3 class="font-bold text-xl mb-2">Стартапы</h3>
-							<p class="text-gray text-sm mb-4">
-								Находите Product-Market Fit без затрат на агентства. Исследуйте
-								рынок до запуска.
-							</p>
-							<ul class="space-y-2 text-sm">
-								<li class="flex items-center gap-2 text-gray">
-									<i data-lucide="check" class="w-4 h-4 text-mint"></i> Поиск
-									PMF
-								</li>
-								<li class="flex items-center gap-2 text-gray">
-									<i data-lucide="check" class="w-4 h-4 text-mint"></i>
-									Тестирование цен
-								</li>
-							</ul>
-						</div>
-					</div>
+				<div class="scenario-indicator w-2 h-2 rounded-full bg-slate-300 cursor-pointer" data-scenario="2">
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<!-- CTA -->
-		<section class="py-20 bg-dark text-white">
-			<div class="max-w-3xl mx-auto px-6 text-center">
-				<h2 class="text-4xl font-bold mb-4">
-					Начните исследовать<br />со скоростью мысли
+	<!-- How it Works -->
+	<section class="py-24 bg-white" id="how-it-works">
+		<div class="max-w-7xl mx-auto px-6">
+			<h2 class="text-4xl font-black text-center text-slate-900 mb-20">
+				Как это работает?
+			</h2>
+			<div class="grid md:grid-cols-4 gap-8 relative">
+				<div class="hidden md:block absolute top-12 left-0 w-full h-px bg-slate-200"></div>
+				<!-- Step 1 -->
+				<div class="relative z-10 text-center px-2">
+					<div
+						class="w-20 h-20 bg-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-emerald-100 shadow-sm">
+						<span class="text-2xl font-black text-emerald-600">01</span>
+					</div>
+					<h4 class="font-bold text-slate-900 mb-2">Вопрос исследования</h4>
+					<p class="text-sm text-slate-500 leading-relaxed">
+						Опишите вашу идею, рыночную ситуацию или самую смелую гипотезу.
+						Система поможет сформировать контекст для опроса.
+					</p>
+				</div>
+				<!-- Step 2 -->
+				<div class="relative z-10 text-center px-2">
+					<div
+						class="w-20 h-20 bg-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-emerald-100 shadow-sm">
+						<span class="text-2xl font-black text-emerald-600">02</span>
+					</div>
+					<h4 class="font-bold text-slate-900 mb-2">Целевая Аудитория</h4>
+					<p class="text-sm text-slate-500 leading-relaxed">
+						Задайте нужную аудиторию. Комбинируйте различные демографические и
+						психографические варианты.
+					</p>
+				</div>
+				<!-- Step 3 -->
+				<div class="relative z-10 text-center px-2">
+					<div
+						class="w-20 h-20 bg-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-emerald-100 shadow-sm">
+						<span class="text-2xl font-black text-emerald-600">03</span>
+					</div>
+					<h4 class="font-bold text-slate-900 mb-2">AI Результаты</h4>
+					<p class="text-sm text-slate-500 leading-relaxed">
+						Исследуйте интерактивные карты и профили. Система выделяет скрытые
+						закономерности в поведении ниш.
+					</p>
+				</div>
+				<!-- Step 4 -->
+				<div class="relative z-10 text-center px-2">
+					<div
+						class="w-20 h-20 bg-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-emerald-100 shadow-sm">
+						<span class="text-2xl font-black text-emerald-600">04</span>
+					</div>
+					<h4 class="font-bold text-slate-900 mb-2">Финальный отчет</h4>
+					<p class="text-sm text-slate-500 leading-relaxed">
+						Получите экспертный отчет. В условиях неопределенности у вас будут
+						проверенные данные для решений.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Challenges Section / Carousel -->
+	<section class="py-24 bg-slate-50 overflow-hidden relative" id="challenges">
+		<div class="max-w-7xl mx-auto px-6 relative">
+			<div class="text-center max-w-3xl mx-auto mb-20">
+				<h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-6 uppercase tracking-tight">
+					Традиционные исследования —
+					<span class="text-slate-400">это больно</span>
 				</h2>
-				<p class="text-gray-400 mb-8">
-					Первое исследование бесплатно. Результаты через 5 минут.
+				<p class="text-slate-600 text-lg">
+					Мы пересмотрели подход к аналитике, чтобы избавить вас от
+					классических барьеров маркетинга.
 				</p>
+			</div>
 
-				<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-					<button
-						class="px-8 py-3 bg-mint text-white font-semibold rounded-lg hover:bg-mint-dark transition"
-					>
-						Запустить бесплатно
-					</button>
-					<button
-						class="px-8 py-3 bg-white/10 text-white border border-white/20 font-semibold rounded-lg hover:bg-white/20 transition"
-					>
-						Забронировать демо
-					</button>
+			<!-- Carousel Container -->
+			<div class="relative max-w-5xl mx-auto group">
+				<!-- Carousel Track -->
+				<div class="overflow-hidden relative rounded-3xl" id="challengesCarousel">
+					<div class="flex transition-transform duration-500 ease-in-out" id="challengesTrack">
+						<!-- Slide 1: Speed -->
+						<div class="w-full flex-[0_0_100%] px-4 shrink-0 sm:px-8">
+							<div class="grid lg:grid-cols-2 gap-12 items-center">
+								<div class="order-2 lg:order-1 space-y-6">
+									<div
+										class="inline-flex items-center gap-2 text-red-500 font-bold text-sm uppercase">
+										<span class="material-symbols-outlined text-xl">timer_off</span>
+										Проблема: Медленно
+									</div>
+									<h3 class="text-3xl font-bold text-slate-900">
+										Недели на сбор данных
+									</h3>
+									<p class="text-slate-600 leading-relaxed">
+										Классические фокус-группы требуют времени на рекрутинг,
+										проведение и расшифровку. Пока вы ждете отчет, рынок и
+										конкуренты уже ушли далеко вперед.
+									</p>
+									<div
+										class="p-6 bg-emerald-50 rounded-2xl border border-emerald-400/20 flex items-start gap-4">
+										<div
+											class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center shrink-0">
+											<span class="material-symbols-outlined text-white">bolt</span>
+										</div>
+										<div>
+											<h4 class="font-bold text-emerald-900 mb-1">
+												Решение PANELIX: 5 минут
+											</h4>
+											<p class="text-sm text-emerald-800/80">
+												Результаты анализа доступны мгновенно после настройки
+												симуляции. Скорость мысли — это ваша скорость роста.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="order-1 lg:order-2 relative">
+									<div class="absolute -inset-4 bg-emerald-400/10 rounded-full blur-3xl opacity-50">
+									</div>
+									<div
+										class="relative bg-white p-8 rounded-3xl border border-slate-100 flex justify-center items-center h-80">
+										<div class="text-slate-200 scale-150">
+											<span class="material-symbols-outlined text-9xl">schedule</span>
+										</div>
+										<div
+											class="absolute flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg border border-slate-100 -bottom-4 animate-bounce">
+											<span class="text-emerald-500 font-bold">Done!</span>
+											<span class="text-xs text-slate-400">99.9% complete</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 2: Access -->
+						<div class="w-full flex-[0_0_100%] px-4 shrink-0 sm:px-8">
+							<div class="grid lg:grid-cols-2 gap-12 items-center">
+								<div class="relative">
+									<div class="absolute -inset-4 bg-emerald-100/50 rounded-full blur-3xl opacity-50">
+									</div>
+									<div
+										class="relative bg-white p-8 rounded-3xl border border-slate-100 flex justify-center items-center h-80">
+										<div class="text-slate-200 scale-150">
+											<span class="material-symbols-outlined text-9xl">groups_2</span>
+										</div>
+										<div
+											class="absolute grid grid-cols-3 gap-2 p-3 bg-white rounded-xl shadow-xl border border-slate-100 -right-4 top-1/4">
+											<div class="w-8 h-8 rounded-full bg-emerald-400/40"></div>
+											<div class="w-8 h-8 rounded-full bg-emerald-600"></div>
+											<div class="w-8 h-8 rounded-full bg-emerald-100"></div>
+										</div>
+									</div>
+								</div>
+								<div class="space-y-6">
+									<div
+										class="inline-flex items-center gap-2 text-red-500 font-bold text-sm uppercase">
+										<span class="material-symbols-outlined text-xl">person_search</span>
+										Проблема: Дорого
+									</div>
+									<h3 class="text-3xl font-bold text-slate-900">
+										Трудный поиск узких сегментов
+									</h3>
+									<p class="text-slate-600 leading-relaxed">
+										Поиск специфической аудитории (например, СТО
+										финтех-компаний) обходится в тысячи долларов за одного
+										респондента.
+									</p>
+									<div
+										class="p-6 bg-emerald-50 rounded-2xl border border-emerald-400/20 flex items-start gap-4">
+										<div
+											class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center shrink-0">
+											<span class="material-symbols-outlined text-white">person_add</span>
+										</div>
+										<div>
+											<h4 class="font-bold text-emerald-900 mb-1">
+												Решение PANELIX: Любой сегмент
+											</h4>
+											<p class="text-sm text-emerald-800/80">
+												Создавайте любые аватары за пару кликов на основе
+												текстовых промптов или ваших CRM-данных без лишних
+												затрат.
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 3: Bias -->
+						<div class="w-full flex-[0_0_100%] px-4 shrink-0 sm:px-8">
+							<div class="grid lg:grid-cols-2 gap-12 items-center">
+								<div class="order-2 lg:order-1 space-y-6">
+									<div
+										class="inline-flex items-center gap-2 text-red-500 font-bold text-sm uppercase">
+										<span class="material-symbols-outlined text-xl">psychology_alt</span>
+										Проблема: Искажения
+									</div>
+									<h3 class="text-3xl font-bold text-slate-900">
+										Социальная желательность
+									</h3>
+									<p class="text-slate-600 leading-relaxed">
+										Живые люди часто врут или подсознательно пытаются угодить
+										интервьюеру, что искажает реальную картину мотивации.
+									</p>
+									<div
+										class="p-6 bg-emerald-50 rounded-2xl border border-emerald-400/20 flex items-start gap-4">
+										<div
+											class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center shrink-0">
+											<span class="material-symbols-outlined text-white">biotech</span>
+										</div>
+										<div>
+											<h4 class="font-bold text-emerald-900 mb-1">
+												Решение PANELIX: Чистая логика
+											</h4>
+											<p class="text-sm text-emerald-800/80">
+												Цифровые двойники лишены предубеждений и отвечают на
+												основе заложенных паттернов поведения и данных.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="order-1 lg:order-2 relative">
+									<div class="absolute -inset-4 bg-emerald-400/10 rounded-full blur-3xl opacity-50">
+									</div>
+									<div
+										class="relative bg-white p-8 rounded-3xl border border-slate-100 flex justify-center items-center h-80">
+										<div class="text-slate-200 scale-150">
+											<span class="material-symbols-outlined text-9xl">neurology</span>
+										</div>
+										<div
+											class="absolute bg-white p-4 rounded-xl shadow-lg border border-slate-100 -left-6 bottom-10 max-w-[180px]">
+											<p class="text-xs italic text-slate-400">
+												"Я говорю то, что вы хотите услышать..."
+											</p>
+											<div class="mt-2 h-1 w-full bg-red-100 rounded-full overflow-hidden">
+												<div class="h-full w-3/4 bg-red-400"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 
-				<div class="flex justify-center gap-6 text-sm text-gray-400">
-					<span class="flex items-center gap-2"
-						><i data-lucide="check-circle" class="w-4 h-4 text-mint"></i> Без
-						карты</span
-					>
-					<span class="flex items-center gap-2"
-						><i data-lucide="check-circle" class="w-4 h-4 text-mint"></i> Отмена
-						anytime</span
-					>
+				<!-- Navigation Buttons -->
+				<button
+					class="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-slate-100 flex items-center justify-center text-slate-400 hover:text-emerald-600 hover:border-emerald-200 transition-colors z-10 opacity-0 group-hover:opacity-100 focus:opacity-100"
+					id="challengePrev">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+						</path>
+					</svg>
+				</button>
+				<button
+					class="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-slate-100 flex items-center justify-center text-slate-400 hover:text-emerald-600 hover:border-emerald-200 transition-colors z-10 opacity-0 group-hover:opacity-100 focus:opacity-100"
+					id="challengeNext">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+					</svg>
+				</button>
+
+				<!-- Dots -->
+				<div class="flex justify-center gap-2 mt-8" id="challengeDots">
+					<button class="w-2.5 h-2.5 rounded-full bg-emerald-500 transition-all challenge-dot"
+						data-index="0"></button>
+					<button class="w-2.5 h-2.5 rounded-full bg-slate-300 transition-all challenge-dot"
+						data-index="1"></button>
+					<button class="w-2.5 h-2.5 rounded-full bg-slate-300 transition-all challenge-dot"
+						data-index="2"></button>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<!-- Footer -->
-		<footer class="bg-navy text-light-gray py-12 border-t border-gray-800">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="grid md:grid-cols-4 gap-8 mb-8">
-					<div class="col-span-2">
-						<div class="flex items-center gap-2 mb-4">
+	<!-- Features Section -->
+	<section class="py-24 bg-white relative z-20" id="features">
+		<div class="max-w-5xl mx-auto px-6 relative">
+			<div class="text-center max-w-3xl mx-auto mb-8 space-y-4">
+				<h2 class="text-xs font-bold text-emerald-600 uppercase tracking-widest">
+					Возможности платформы
+				</h2>
+			</div>
+
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<!-- Card 1 -->
+				<div class="group h-60 w-full [perspective:1000px]">
+					<div
+						class="relative h-full w-full rounded-3xl shadow-sm transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer">
+						<!-- Front -->
+						<div
+							class="absolute inset-0 h-full w-full rounded-3xl bg-white border border-slate-200 [backface-visibility:hidden] flex flex-col items-center justify-center p-8 text-center hover:shadow-xl transition-shadow duration-300">
 							<div
-								class="w-8 h-8 bg-mint rounded-lg flex items-center justify-center text-white font-bold"
-							>
-								P
+								class="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 shadow-sm border border-emerald-100">
+								<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+										d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm-3 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+									</path>
+								</svg>
 							</div>
-							<span class="text-xl font-bold text-white">Panelix</span>
+							<h4 class="text-lg font-bold text-slate-800">
+								Симулякровые аудитории
+							</h4>
 						</div>
-						<p class="text-sm mb-4 max-w-sm">
-							Платформа для маркетинговых исследований с синтетическими
-							респондентами. Точность 90%.
+						<!-- Back -->
+						<div
+							class="absolute inset-0 h-full w-full rounded-3xl bg-slate-900 text-white [transform:rotateY(180deg)] [backface-visibility:hidden] flex items-center justify-center p-8 text-center shadow-2xl border border-slate-800">
+							<p class="text-[12px] text-slate-300 leading-relaxed font-medium">
+								Мгновенное создание гипердетализированных цифровых двойников
+								целевой аудитории. Каждый симулякр полностью воспроизводит
+								заданные демографические, психографические и поведенческие
+								профили с точностью реального человека.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Card 2 -->
+				<div class="group h-60 w-full [perspective:1000px]">
+					<div
+						class="relative h-full w-full rounded-3xl shadow-sm transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer">
+						<!-- Front -->
+						<div
+							class="absolute inset-0 h-full w-full rounded-3xl bg-white border border-slate-200 [backface-visibility:hidden] flex flex-col items-center justify-center p-8 text-center hover:shadow-xl transition-shadow duration-300">
+							<div
+								class="w-16 h-16 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 shadow-sm border border-blue-100">
+								<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+										d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4">
+									</path>
+								</svg>
+							</div>
+							<h4 class="text-lg font-bold text-slate-800">
+								Автоматизированные AI-опросы
+							</h4>
+						</div>
+						<!-- Back -->
+						<div
+							class="absolute inset-0 h-full w-full rounded-3xl bg-slate-900 text-white [transform:rotateY(180deg)] [backface-visibility:hidden] flex items-center justify-center p-8 text-center shadow-2xl border border-slate-800">
+							<p class="text-[12px] text-slate-300 leading-relaxed font-medium">
+								Проведение глубоких опросов, где каждый цифровой двойник —
+								респондент отвечает исходя из своего уникального жизненного
+								опыта и предпочтений.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Card 3 -->
+				<div class="group h-60 w-full [perspective:1000px]">
+					<div
+						class="relative h-full w-full rounded-3xl shadow-sm transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer">
+						<!-- Front -->
+						<div
+							class="absolute inset-0 h-full w-full rounded-3xl bg-white border border-slate-200 [backface-visibility:hidden] flex flex-col items-center justify-center p-8 text-center hover:shadow-xl transition-shadow duration-300">
+							<div
+								class="w-16 h-16 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6 shadow-sm border border-indigo-100">
+								<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+										d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+								</svg>
+							</div>
+							<h4 class="text-lg font-bold text-slate-800">
+								Анализ семантической схожести
+							</h4>
+						</div>
+						<!-- Back -->
+						<div
+							class="absolute inset-0 h-full w-full rounded-3xl bg-slate-900 text-white [transform:rotateY(180deg)] [backface-visibility:hidden] flex items-center justify-center p-8 text-center shadow-2xl border border-slate-800">
+							<p class="text-[12px] text-slate-300 leading-relaxed font-medium">
+								Ответы ваших цифровых двойников мгновенно превращаются в
+								точные цифры. NLP-модели переводят слова в смысловое
+								пространство, где сходство с ключевыми идеями измеряется
+								математически — без потери глубины.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Card 4 -->
+				<div class="group h-60 w-full [perspective:1000px]">
+					<div
+						class="relative h-full w-full rounded-3xl shadow-sm transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer">
+						<!-- Front -->
+						<div
+							class="absolute inset-0 h-full w-full rounded-3xl bg-white border border-slate-200 [backface-visibility:hidden] flex flex-col items-center justify-center p-8 text-center hover:shadow-xl transition-shadow duration-300">
+							<div
+								class="w-16 h-16 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-6 shadow-sm border border-amber-100">
+								<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+										d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+										d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+								</svg>
+							</div>
+							<h4 class="text-lg font-bold text-slate-800">
+								Кластер-карта поведенческих групп
+							</h4>
+						</div>
+						<!-- Back -->
+						<div
+							class="absolute inset-0 h-full w-full rounded-3xl bg-slate-900 text-white [transform:rotateY(180deg)] [backface-visibility:hidden] flex items-center justify-center p-8 text-center shadow-2xl border border-slate-800">
+							<p class="text-[12px] text-slate-300 leading-relaxed font-medium">
+								Интерактивная семантическая карта кластеров симулякров.
+								Визуально показывает, как цифровые двойники группируются по
+								убеждениям, ценностям и поведенческим паттернам — в реальном
+								времени.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Card 5 -->
+				<div class="group h-60 w-full [perspective:1000px]">
+					<div
+						class="relative h-full w-full rounded-3xl shadow-sm transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer">
+						<!-- Front -->
+						<div
+							class="absolute inset-0 h-full w-full rounded-3xl bg-white border border-slate-200 [backface-visibility:hidden] flex flex-col items-center justify-center p-8 text-center hover:shadow-xl transition-shadow duration-300">
+							<div
+								class="w-16 h-16 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center mb-6 shadow-sm border border-rose-100">
+								<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+										d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+									</path>
+								</svg>
+							</div>
+							<h4 class="text-lg font-bold text-slate-800">
+								Чат с аудиторией
+							</h4>
+						</div>
+						<!-- Back -->
+						<div
+							class="absolute inset-0 h-full w-full rounded-3xl bg-slate-900 text-white [transform:rotateY(180deg)] [backface-visibility:hidden] flex items-center justify-center p-8 text-center shadow-2xl border border-slate-800">
+							<p class="text-[12px] text-slate-300 leading-relaxed font-medium">
+								Прямой диалог с симулякрами вашей целевой аудитории. Входите в
+								живой чат с каждым цифровым двойником и получайте ответы,
+								которые невозможно получить от реальных респондентов.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Card 6 -->
+				<div class="group h-630 w-full [perspective:1000px]">
+					<div
+						class="relative h-full w-full rounded-3xl shadow-sm transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer">
+						<!-- Front -->
+						<div
+							class="absolute inset-0 h-full w-full rounded-3xl bg-white border border-slate-200 [backface-visibility:hidden] flex flex-col items-center justify-center p-8 text-center hover:shadow-xl transition-shadow duration-300">
+							<div
+								class="w-16 h-16 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center mb-6 shadow-sm border border-teal-100">
+								<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+										d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+									</path>
+								</svg>
+							</div>
+							<h4 class="text-lg font-bold text-slate-800">
+								Экспертная аналитика
+							</h4>
+						</div>
+						<!-- Back -->
+						<div
+							class="absolute inset-0 h-full w-full rounded-3xl bg-slate-900 text-white [transform:rotateY(180deg)] [backface-visibility:hidden] flex items-center justify-center p-8 text-center shadow-2xl border border-slate-800">
+							<p class="text-[12px] text-slate-300 leading-relaxed font-medium">
+								AI-агент следующего поколения, который смотрит сквозь цифры.
+								Автоматически обнаруживает скрытые сегменты симулякров,
+								раскрывает истинную картину рынка и выдаёт точные
+								стратегические рекомендации «что делать дальше».
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Scientific Research Section -->
+	<section class="py-24 bg-white" id="scientific-research">
+		<div class="max-w-7xl mx-auto px-6">
+			<div class="text-center max-w-3xl mx-auto mb-16">
+				<h2 class="text-4xl font-black text-slate-900 mb-4 uppercase tracking-tight">
+					Научные исследования
+				</h2>
+				<p class="text-slate-500 text-lg">
+					Доказательная база эффективности синтетических аудиторий на основе
+					мировых экспериментов.
+				</p>
+			</div>
+			<div class="grid md:grid-cols-3 gap-8">
+				<!-- Experiment 1 -->
+				<div
+					class="bg-slate-50 p-8 rounded-3xl border border-slate-100 flex flex-col hover:shadow-xl transition-all duration-300">
+					<div class="mb-6 flex items-start justify-between">
+						<span class="material-symbols-outlined text-4xl text-emerald-600">ballot</span>
+						<span
+							class="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-white px-2 py-1 rounded border border-slate-100">Politic
+							AI</span>
+					</div>
+					<h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">
+						Уханьский эксперимент
+					</h3>
+					<p class="text-sm text-slate-600 mb-6 flex-1">
+						 ИИ предсказал победу Трампа на выборах точнее всех мировых прогнозов. Эксперимент показал что ИИ-модели способны эффективно воспроизводить ответы реальных людей в социологических опросах и прогнозировать результаты выборов
+					</p>
+					<div class="space-y-4 mb-8">
+						<p class="text-xs font-bold text-slate-400 uppercase tracking-wider">
+							Ключевые инсайты:
 						</p>
-					</div>
-					<div>
-						<h4 class="text-white font-semibold mb-4">Продукт</h4>
-						<ul class="space-y-2 text-sm">
-							<li><a href="#" class="hover:text-mint">Возможности</a></li>
-							<li><a href="#" class="hover:text-mint">Цены</a></li>
-							<li><a href="#" class="hover:text-mint">API</a></li>
-						</ul>
-					</div>
-					<div>
-						<h4 class="text-white font-semibold mb-4">Ресурсы</h4>
-						<ul class="space-y-2 text-sm">
-							<li><a href="#" class="hover:text-mint">Документация</a></li>
-							<li>
-								<a
-									href="https://arxiv.org/abs/2510.08338"
-									target="_blank"
-									class="hover:text-mint"
-									>Исследования</a
-								>
+						<ul class="space-y-2">
+							<li class="flex gap-2 items-start text-sm text-slate-700">
+								<span
+									class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_small</span>
+								<span>Высокое соответствие человеческим паттернам (США и Китай)</span>
+							</li>
+							<li class="flex gap-2 items-start text-sm text-slate-700">
+								<span
+									class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_small</span>
+								<span>Воспроизведение культурных различий</span>
+							</li>
+							<li class="flex gap-2 items-start text-sm text-slate-700">
+								<span
+									class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_small</span>
+								<span>Сильная предсказательная сила для выборов</span>
 							</li>
 						</ul>
 					</div>
+					<a class="inline-flex items-center gap-2 text-xs font-bold text-emerald-600 hover:text-emerald-700 transition-colors uppercase tracking-widest group"
+						href="https://arxiv.org/abs/2211.14008" target="_blank">
+						Читать исследование
+						<span
+							class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+					</a>
+				</div>
+				<!-- Experiment 2 -->
+				<div
+					class="bg-slate-50 p-8 rounded-3xl border border-slate-100 flex flex-col hover:shadow-xl transition-all duration-300">
+					<div class="mb-6 flex items-start justify-between">
+						<span class="material-symbols-outlined text-4xl text-emerald-600">psychology</span>
+						<span
+							class="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-white px-2 py-1 rounded border border-slate-100">Agentic
+							Architecture</span>
+					</div>
+					<h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">
+						Стэндфордский симулякровый эксперимент
+					</h3>
+					<p class="text-sm text-slate-600 mb-6 flex-1">
+						Создание архитектуры «генеративных агентов», симулирующих установки и поведение 1052 конкретных
+						людей на основе реальных интервью.
+					</p>
+					<div class="space-y-4 mb-8">
+						<p class="text-xs font-bold text-slate-400 uppercase tracking-wider">
+							Ключевые инсайты:
+						</p>
+						<ul class="space-y-2">
+							<li class="flex gap-2 items-start text-sm text-slate-700">
+								<span
+									class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_small</span>
+								<span>Точность воспроизведения ответов 85% от тест-ретест надежности</span>
+							</li>
+							<li class="flex gap-2 items-start text-sm text-slate-700">
+								<span
+									class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_small</span>
+								<span>Предсказание черт личности</span>
+							</li>
+							<li class="flex gap-2 items-start text-sm text-slate-700">
+								<span
+									class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_small</span>
+								<span>Снижение предвзятости в выборках</span>
+							</li>
+						</ul>
+					</div>
+					<a class="inline-flex items-center gap-2 text-xs font-bold text-emerald-600 hover:text-emerald-700 transition-colors uppercase tracking-widest group"
+						href="https://arxiv.org/abs/2304.03442" target="_blank">
+						Читать исследование
+						<span
+							class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+					</a>
+				</div>
+				<!-- Experiment 3 -->
+				<div
+					class="bg-slate-50 p-8 rounded-3xl border border-slate-100 flex flex-col hover:shadow-xl transition-all duration-300">
+					<div class="mb-6 flex items-start justify-between">
+						<span class="material-symbols-outlined text-4xl text-emerald-600">shopping_cart</span>
+						<span
+							class="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-white px-2 py-1 rounded border border-slate-100">Marketing
+							Science</span>
+					</div>
+					<h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">
+						Таллинский эксперимент
+					</h3>
+					<p class="text-sm text-slate-600 mb-6 flex-1">
+						Решение проблемы нереалистичных рейтингов LLM через метод Semantic Similarity Rating (SSR),
+						протестированный на 9300 ответах.
+					</p>
+					<div class="space-y-4 mb-8">
+						<p class="text-xs font-bold text-slate-400 uppercase tracking-wider">
+							Ключевые инсайты:
+						</p>
+						<ul class="space-y-2">
+							<li class="flex gap-2 items-start text-sm text-slate-700">
+								<span
+									class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_small</span>
+								<span>SSR достигает 90% надежности реальных респондентов</span>
+							</li>
+							<li class="flex gap-2 items-start text-sm text-slate-700">
+								<span
+									class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_small</span>
+								<span>Идентичные человеческим распределения ответов</span>
+							</li>
+							<li class="flex gap-2 items-start text-sm text-slate-700">
+								<span
+									class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_small</span>
+								<span>Масштабируемость и экономия ресурсов</span>
+							</li>
+						</ul>
+					</div>
+					<a class="inline-flex items-center gap-2 text-xs font-bold text-emerald-600 hover:text-emerald-700 transition-colors uppercase tracking-widest group"
+						href="https://arxiv.org/abs/2402.01955" target="_blank">
+						Читать исследование
+						<span
+							class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- For Whom -->
+	<section class="py-24 bg-white">
+		<div class="max-w-7xl mx-auto px-6 text-center">
+			<h2 class="text-4xl font-black text-slate-900 mb-16 uppercase tracking-tight">Кому это нужно?</h2>
+			<div class="grid md:grid-cols-3 gap-8">
+				<div
+					class="bg-slate-50 p-10 rounded-3xl hover:-translate-y-2 transition-transform border border-slate-100 group">
+					<div
+						class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:bg-primary-dark transition-colors">
+						<span
+							class="material-symbols-outlined text-3xl text-primary-dark group-hover:text-white">campaign</span>
+					</div>
+					<h4 class="text-xl font-bold text-slate-900 mb-4">Маркетологам</h4>
+					<p class="text-slate-500 text-sm leading-relaxed">Тестируйте креативы, слоганы и офферы перед
+						запуском рекламных кампаний.</p>
 				</div>
 				<div
-					class="border-t border-gray-800 pt-8 flex justify-between text-sm text-light-gray"
-				>
-					<p>© 2026 Panelix</p>
-					<div class="flex gap-6">
-						<a href="#" class="hover:text-white">Privacy</a>
-						<a href="#" class="hover:text-white">Terms</a>
+					class="bg-slate-50 p-10 rounded-3xl hover:-translate-y-2 transition-transform border border-slate-100 group">
+					<div
+						class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:bg-emerald-500 transition-colors">
+						<span
+							class="material-symbols-outlined text-3xl text-emerald-500 group-hover:text-white">inventory_2</span>
+					</div>
+					<h4 class="text-xl font-bold text-slate-900 mb-4">Product-менеджерам</h4>
+					<p class="text-slate-500 text-sm leading-relaxed">Проверяйте востребованность новых фич и
+						приоритизируйте бэклог на основе данных.</p>
+				</div>
+				<div
+					class="bg-slate-50 p-10 rounded-3xl hover:-translate-y-2 transition-transform border border-slate-100 group">
+					<div
+						class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:bg-slate-900 transition-colors">
+						<span
+							class="material-symbols-outlined text-3xl text-slate-900 group-hover:text-white">search_insights</span>
+					</div>
+					<h4 class="text-xl font-bold text-slate-900 mb-4">Исследователям</h4>
+					<p class="text-slate-500 text-sm leading-relaxed">Сокращайте время на проведение количественных и
+						качественных исследований в разы.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Pricing -->
+	<section class="py-24 bg-slate-50" id="pricing">
+		<div class="max-w-7xl mx-auto px-6">
+			<div class="text-center mb-16">
+				<h2 class="text-4xl font-black text-slate-900 mb-4">Тарифные планы</h2>
+				<p class="text-slate-500">Выберите масштаб ваших исследований</p>
+			</div>
+			<div class="grid md:grid-cols-3 gap-8 items-stretch">
+				<!-- Startup -->
+				<div class="bg-white p-8 rounded-3xl border border-slate-200 flex flex-col shadow-sm">
+					<h3 class="text-xl font-bold text-slate-900 mb-2">Startup</h3>
+					<div class="text-4xl font-black text-slate-900 mb-6">$199<span
+							class="text-base font-normal text-slate-400">/мес</span></div>
+					<ul class="space-y-4 mb-8 flex-1 text-sm text-slate-600">
+						<li class="flex gap-2"><span
+								class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span> 500
+							синтетических респондентов</li>
+						<li class="flex gap-2"><span
+								class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span> 5
+							активных опросов</li>
+						<li class="flex gap-2"><span
+								class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span> Базовая
+							аналитика</li>
+						<li class="flex gap-2"><span
+								class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span> Email
+							поддержка</li>
+					</ul>
+					<button
+						class="w-full py-3 rounded-xl border border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-colors">Выбрать
+						Startup</button>
+				</div>
+				<!-- Professional -->
+				<div
+					class="bg-white p-8 rounded-3xl border-2 border-primary-dark relative flex flex-col scale-105 shadow-xl shadow-emerald-100">
+					<div
+						class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-dark text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+						Популярный</div>
+					<h3 class="text-xl font-bold text-slate-900 mb-2">Professional</h3>
+					<div class="text-4xl font-black text-slate-900 mb-6">$499<span
+							class="text-base font-normal text-slate-400">/мес</span></div>
+					<ul class="space-y-4 mb-8 flex-1 text-sm text-slate-600">
+						<li class="flex gap-2"><span
+								class="material-symbols-outlined text-primary-dark text-sm">check_circle</span> 2,500
+							синтетических респондентов</li>
+						<li class="flex gap-2"><span
+								class="material-symbols-outlined text-primary-dark text-sm">check_circle</span>
+							Безлимитные опросы</li>
+						<li class="flex gap-2"><span
+								class="material-symbols-outlined text-primary-dark text-sm">check_circle</span>
+							Глубинный NLP анализ</li>
+						<li class="flex gap-2"><span
+								class="material-symbols-outlined text-primary-dark text-sm">check_circle</span>
+							Интерактивная карта кластеров</li>
+						<li class="flex gap-2"><span
+								class="material-symbols-outlined text-primary-dark text-sm">check_circle</span>
+							Приоритетная поддержка</li>
+					</ul>
+					<button
+						class="w-full py-3 rounded-xl bg-primary-dark text-white font-bold hover:bg-emerald-700 transition-colors">Выбрать
+						Professional</button>
+				</div>
+				<!-- Enterprise -->
+				<div class="bg-white p-8 rounded-3xl border border-slate-200 flex flex-col shadow-sm">
+					<h3 class="text-xl font-bold text-slate-900 mb-2">Enterprise</h3>
+					<div class="text-4xl font-black text-slate-900 mb-6">Custom</div>
+					<ul class="space-y-4 mb-8 flex-1 text-sm text-slate-600">
+						<li class="flex gap-2"><span
+								class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span> Кастомные
+							модели под вашу нишу</li>
+						<li class="flex gap-2"><span
+								class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+							Интеграция по API</li>
+						<li class="flex gap-2"><span
+								class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+							Неограниченное число юзеров</li>
+						<li class="flex gap-2"><span
+								class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+							Персональный менеджер</li>
+					</ul>
+					<button
+						class="w-full py-3 rounded-xl border border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-colors">Связаться
+						с нами</button>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- FAQ -->
+	<section class="py-24 bg-white">
+		<div class="max-w-3xl mx-auto px-6">
+			<h2 class="text-3xl font-black text-center text-slate-900 mb-12 uppercase tracking-tight">Часто задаваемые
+				вопросы</h2>
+			<div class="space-y-4">
+				<details class="bg-slate-50 rounded-2xl overflow-hidden group border border-slate-100">
+					<summary
+						class="p-6 cursor-pointer flex justify-between items-center list-none font-bold text-slate-900">
+						Откуда берутся данные для обучения?
+						<span
+							class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary-dark">expand_more</span>
+					</summary>
+					<div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+						Мы используем агрегированные и деперсонализированные данные из открытых источников, панельных
+						исследований и партнерских сетей, соблюдая все нормы GDPR и политики конфиденциальности.
+					</div>
+				</details>
+				<details class="bg-slate-50 rounded-2xl overflow-hidden group border border-slate-100">
+					<summary
+						class="p-6 cursor-pointer flex justify-between items-center list-none font-bold text-slate-900">
+						Насколько точны эти "двойники"?
+						<span
+							class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary-dark">expand_more</span>
+					</summary>
+					<div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+						Наши тесты показывают корреляцию в 0.92-0.95 с реальными опросами в массовых сегментах. Для
+						узкоспециализированных B2B сегментов мы рекомендуем калибровку модели.
+					</div>
+				</details>
+				<details class="bg-slate-50 rounded-2xl overflow-hidden group border border-slate-100">
+					<summary
+						class="p-6 cursor-pointer flex justify-between items-center list-none font-bold text-slate-900">
+						Можно ли загрузить свою базу клиентов?
+						<span
+							class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary-dark">expand_more</span>
+					</summary>
+					<div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+						Да, в тарифах Professional и Enterprise доступна функция создания цифровых профилей на основе
+						ваших исторических данных о клиентах.
+					</div>
+				</details>
+			</div>
+		</div>
+	</section>
+	<!-- Final CTA -->
+	<section class="py-12 relative">
+		<div class="max-w-7xl mx-auto px-6">
+			<div class="bg-slate-900 rounded-[3rem] py-20 px-6 text-center relative overflow-hidden shadow-2xl">
+				<div class="absolute inset-0 bg-gradient-to-br from-primary-dark/20 to-accent-blue/20 opacity-50"></div>
+				<div class="relative z-10">
+					<h2 class="text-3xl md:text-5xl font-black text-white mb-6">Готовы изменить свой маркетинг?</h2>
+					<p class="text-slate-300 text-xl mb-10 max-w-2xl mx-auto font-medium">Начните использовать силу
+						синтетических аудиторий сегодня и получите конкурентное преимущество.</p>
+					<div class="flex flex-col sm:flex-row gap-4 justify-center">
+						<button
+							class="bg-emerald-700 text-white px-10 py-4 rounded-xl font-black text-lg hover:bg-emerald-500 transition-all shadow-lg shadow-emerald-900/40">Зарегистрироваться
+							бесплатно</button>
+						<button
+							class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-colors">Записаться
+							на демо</button>
 					</div>
 				</div>
 			</div>
-		</footer>
+		</div>
+	</section>
 
-		<script>
-			lucide.createIcons()
-		</script>
-	</body>
+	<!-- Contact Us Section -->
+	<section class="pt-10 pb-20 bg-slate-50 " id="contact">
+		<div class="max-w-4xl mx-auto px-32">
+			<div class="bg-white p-8 md:p-16 rounded-lg shadow-xl border border-slate-100">
+				<h2 class="text-3xl md:text-4xl font-black text-center text-slate-900 mb-6 uppercase tracking-tight">
+					СВЯЖИТЕСЬ С НАМИ
+				</h2>
+				<form class="space-y-8">
+					<div class="space-y-6">
+						<div>
+							<input
+								class="w-full bg-slate-800 text-white placeholder-slate-400 px-6 py-4 rounded-lg border-none focus:ring-2 focus:ring-primary-dark transition-all text-m"
+								placeholder="Имя" required="" type="text" />
+						</div>
+						<div>
+							<input
+								class="w-full bg-slate-800 text-white placeholder-slate-400 px-6 py-4 rounded-lg border-none focus:ring-2 focus:ring-primary-dark transition-all text-m"
+								placeholder="Почта для связи" required="" type="email" />
+						</div>
+						<div>
+							<input
+								class="w-full bg-slate-800 text-white placeholder-slate-400 px-6 py-4 rounded-lg border-none focus:ring-2 focus:ring-primary-dark transition-all text-m"
+								placeholder="Телефон" required="" type="tel" />
+						</div>
+					</div>
+					<div class="space-y-4">
+						<p class="font-bold text-slate-900 text-lg">
+							Как вам удобнее общаться?
+						</p>
+						<div class="flex flex-wrap gap-8">
+							<label class="flex items-center gap-3 cursor-pointer group">
+								<input
+									class="w-6 h-6 rounded border-slate-300 text-primary-dark focus:ring-primary-dark"
+									type="checkbox" />
+								<span
+									class="text-slate-700 font-medium group-hover:text-primary-dark transition-colors">Телефон</span>
+							</label>
+							<label class="flex items-center gap-3 cursor-pointer group">
+								<input
+									class="w-6 h-6 rounded border-slate-300 text-primary-dark focus:ring-primary-dark"
+									type="checkbox" />
+								<span
+									class="text-slate-700 font-medium group-hover:text-primary-dark transition-colors">MAX</span>
+							</label>
+							<label class="flex items-center gap-3 cursor-pointer group">
+								<input
+									class="w-6 h-6 rounded border-slate-300 text-primary-dark focus:ring-primary-dark"
+									type="checkbox" />
+								<span
+									class="text-slate-700 font-medium group-hover:text-primary-dark transition-colors">Telegram</span>
+							</label>
+						</div>
+					</div>
+					<button
+						class="w-full py-5 bg-emerald-600 text-white rounded-lg font-black text-xl uppercase tracking-widest hover:bg-slate-900 transition-all shadow-xl shadow-black/10 active:scale-[0.98]"
+						type="submit">
+						Отправить
+					</button>
+				</form>
+			</div>
+		</div>
+	</section>
+
+
+	</main>
+	<footer class="bg-slate-50 py-8 border-t border-slate-200">
+		<div class="max-w-7xl mx-auto px-8	flex flex-col md:flex-row justify-between gap-3">
+			<div class="flex gap-2 flex-col">
+				<p class="text-slate-500 text-sm leading-relaxed">ОГРН 322774600723922</p>
+				<p class="text-slate-500 text-sm leading-relaxed">ИНН 690707523697</p>
+			</div>
+			<p class="text-slate-400 text-xs font-medium">© 2026 PANELIX. Все права защищены.</p>
+			<div class="flex gap-6">
+				<a class="text-slate-400 hover:text-primary-dark transition-colors" href="#"><span
+						class="material-symbols-outlined text-xl">language</span> </a>
+				<a class="text-slate-400 hover:text-primary-dark transition-colors" href="#"><span
+						class="material-symbols-outlined text-xl">alternate_email</span></a>
+			</div>
+		</div>
+	</footer>
+
+	<script src="./assets/js/main.js" defer></script>
+</body>
+
 </html>
