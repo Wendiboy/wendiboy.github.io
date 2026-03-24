@@ -779,11 +779,10 @@
 							Architecture</span>
 					</div>
 					<h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">
-						Стэндфордский симулякровый эксперимент
+					 Симулякровый эксперимент
 					</h3>
 					<p class="text-sm text-slate-600 mb-6 flex-1">
-						Создание архитектуры «генеративных агентов», симулирующих установки и поведение 1052 конкретных
-						людей на основе реальных интервью.
+						В цифровом городе ИИ-агентов с собственной «памятью» показали поведение и социальное взаимодействие, которое люди оценили как более "честное", чем ответы живых участников.
 					</p>
 					<div class="space-y-4 mb-8">
 						<p class="text-xs font-bold text-slate-400 uppercase tracking-wider">
@@ -793,17 +792,17 @@
 							<li class="flex gap-2 items-start text-sm text-slate-700">
 								<span
 									class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_small</span>
-								<span>Точность воспроизведения ответов 85% от тест-ретест надежности</span>
+								<span>Достоверность: синтетические данные могут успешно заменять дорогостоящие фокус-группы.</span>
 							</li>
 							<li class="flex gap-2 items-start text-sm text-slate-700">
 								<span
 									class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_small</span>
-								<span>Предсказание черт личности</span>
+								<span>Видны скрытые тренды и паттерны поведения, которые не видны при одиночных опросах.</span>
 							</li>
 							<li class="flex gap-2 items-start text-sm text-slate-700">
 								<span
 									class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_small</span>
-								<span>Снижение предвзятости в выборках</span>
+								<span>Респонденты не галлюцинируют, а отвечают строго на основе своей «биографии»</span>
 							</li>
 						</ul>
 					</div>
@@ -998,37 +997,45 @@
 				<details class="bg-slate-50 rounded-2xl overflow-hidden group border border-slate-100">
 					<summary
 						class="p-6 cursor-pointer flex justify-between items-center list-none font-bold text-slate-900">
-						Откуда берутся данные для обучения?
+						Что такое «синтетические респонденты» и откуда они берутся??
 						<span
 							class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary-dark">expand_more</span>
 					</summary>
 					<div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
-						Мы используем агрегированные и деперсонализированные данные из открытых источников, панельных
-						исследований и партнерских сетей, соблюдая все нормы GDPR и политики конфиденциальности.
+						Это цифровые двойники (Silicon Samples), созданные на базе больших языковых моделей. Мы наделяем каждого персонажа уникальным «потоком памяти»: биографией, привычками, уровнем дохода и специфическими убеждениями. Они не просто выдают текст, а имитируют поведение реальных сегментов вашей аудитории.
 					</div>
 				</details>
 				<details class="bg-slate-50 rounded-2xl overflow-hidden group border border-slate-100">
 					<summary
 						class="p-6 cursor-pointer flex justify-between items-center list-none font-bold text-slate-900">
-						Насколько точны эти "двойники"?
+						Почему я не могу просто спросить ChatGPT «что думает моя аудитория»?
 						<span
 							class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary-dark">expand_more</span>
 					</summary>
 					<div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
-						Наши тесты показывают корреляцию в 0.92-0.95 с реальными опросами в массовых сегментах. Для
-						узкоспециализированных B2B сегментов мы рекомендуем калибровку модели.
+						Обычный чат-бот выдает усредненный «ответ из интернета». PANELIX использует агентную архитектуру: мы создаем сотни автономных личностей, которые не знают друг о друге. Это исключает предвзятость и позволяет увидеть полярные мнения, конфликты интересов и скрытые сегменты, которые теряются при общем запросе.
 					</div>
 				</details>
 				<details class="bg-slate-50 rounded-2xl overflow-hidden group border border-slate-100">
 					<summary
 						class="p-6 cursor-pointer flex justify-between items-center list-none font-bold text-slate-900">
-						Можно ли загрузить свою базу клиентов?
+						Насколько точны эти данные? Можно ли им доверять?
 						<span
 							class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary-dark">expand_more</span>
 					</summary>
 					<div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
-						Да, в тарифах Professional и Enterprise доступна функция создания цифровых профилей на основе
-						ваших исторических данных о клиентах.
+						Наш подход базируется на исследованиях Стэнфорда и Google (архитектура симулякров). Тесты показывают, что корреляция ответов синтетических агентов с реальными фокус-группами достигает 85-90%. Это идеальный инструмент для быстрой проверки гипотез, который экономит недели «полевых» работ.
+					</div>
+				</details>
+				<details class="bg-slate-50 rounded-2xl overflow-hidden group border border-slate-100">
+					<summary
+						class="p-6 cursor-pointer flex justify-between items-center list-none font-bold text-slate-900">
+						Как работает семантический анализ (Semantic Similarity Rating)?
+						<span
+							class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary-dark">expand_more</span>
+					</summary>
+					<div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+						Мы не просто считаем количество слов. Платформа переводит текстовые ответы в математические векторы и сравнивает их с вашими «якорными» смыслами. Это позволяет оцифровать качественные интервью и увидеть на карте кластеров, как именно распределяются мнения вашей аудитории.	
 					</div>
 				</details>
 			</div>
