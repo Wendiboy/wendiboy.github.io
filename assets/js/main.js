@@ -395,6 +395,38 @@ function nextScenario() {
 	}
 }
 
+function initSpeedPipeline() {
+	const pipeline = document.getElementById('speedPipeline')
+	if (!pipeline) return
+
+	const steps = Array.from(pipeline.querySelectorAll('.pipeline-step'))
+	const statusText = document.getElementById('pipelineStatusText')
+	const progressBar = document.getElementById('pipelineProgressBar')
+	let currentStep = 0
+
+	function renderPipeline(index) {
+		steps.forEach((step, stepIndex) => {
+			step.classList.toggle('is-active', stepIndex === index)
+			step.classList.toggle('is-complete', stepIndex < index)
+		})
+
+		if (statusText) {
+			statusText.textContent = steps[index].dataset.stepLabel || ''
+		}
+
+		if (progressBar) {
+			progressBar.style.width = `${((index + 1) / steps.length) * 100}%`
+		}
+	}
+
+	renderPipeline(currentStep)
+
+	setInterval(() => {
+		currentStep = (currentStep + 1) % steps.length
+		renderPipeline(currentStep)
+	}, 1800)
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	document.querySelectorAll('.scenario-indicator').forEach((ind, i) => {
 		ind.addEventListener('click', () => {
@@ -406,6 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 
 	runScenario(0)
+	initSpeedPipeline()
 	setInterval(nextScenario, 9000)
 
 	// Challenges Carousel Logic

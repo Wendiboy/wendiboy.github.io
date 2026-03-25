@@ -353,14 +353,48 @@
 									<div class="absolute -inset-4 bg-emerald-400/10 rounded-full blur-3xl opacity-50">
 									</div>
 									<div
-										class="relative bg-white p-8 rounded-3xl border border-slate-100 flex justify-center items-center h-80">
-										<div class="text-slate-200 scale-150">
-											<span class="material-symbols-outlined text-9xl">schedule</span>
-										</div>
-										<div
-											class="absolute flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg border border-slate-100 -bottom-4 animate-bounce">
-											<span class="text-emerald-500 font-bold">Done!</span>
-											<span class="text-xs text-slate-400">99.9% complete</span>
+										class="relative bg-white p-0 rounded-3xl border border-slate-100 flex justify-center items-center h-90 overflow-hidden">
+										<div class="pipeline-demo w-full max-w-md" id="speedPipeline">
+											<div class="pipeline-demo__header">
+												<span class="pipeline-demo__eyebrow">Pipeline</span>
+												<div class="pipeline-demo__status">
+													<span class="pipeline-demo__status-dot"></span>
+													<span id="pipelineStatusText">Инициализация</span>
+												</div>
+											</div>
+											<div class="pipeline-demo__steps">
+												<div class="pipeline-step is-active" data-step-label="Генерация профилей респондентов">
+													<div class="pipeline-step__bullet">1</div>
+													<div class="pipeline-step__content">
+														<p class="pipeline-step__title">Генерация профилей респондентов</p>
+														<p class="pipeline-step__meta">Создаём синтетические сегменты и поведенческие паттерны</p>
+													</div>
+												</div>
+												<div class="pipeline-step" data-step-label="Опрос респондентов">
+													<div class="pipeline-step__bullet">2</div>
+													<div class="pipeline-step__content">
+														<p class="pipeline-step__title">Опрос респондентов</p>
+														<p class="pipeline-step__meta">Параллельно собираем ответы по сценариям и гипотезам</p>
+													</div>
+												</div>
+												<div class="pipeline-step" data-step-label="Семантический анализ">
+													<div class="pipeline-step__bullet">3</div>
+													<div class="pipeline-step__content">
+														<p class="pipeline-step__title">Семантический анализ</p>
+														<p class="pipeline-step__meta">Извлекаем смыслы, темы и эмоциональные сигналы</p>
+													</div>
+												</div>
+												<div class="pipeline-step" data-step-label="Кластеризация и анализ паттернов">
+													<div class="pipeline-step__bullet">4</div>
+													<div class="pipeline-step__content">
+														<p class="pipeline-step__title">Кластеризация и анализ паттернов</p>
+														<p class="pipeline-step__meta">Группируем инсайты и подсвечиваем устойчивые закономерности</p>
+													</div>
+												</div>
+											</div>
+											<div class="pipeline-demo__progress">
+												<div class="pipeline-demo__progress-bar" id="pipelineProgressBar"></div>
+											</div>
 										</div>
 									</div>
 								</div>
