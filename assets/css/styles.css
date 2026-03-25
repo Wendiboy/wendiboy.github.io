@@ -232,6 +232,13 @@ body {
 	line-height: 1.3;
 	font-weight: 700;
 	color: #0f172a;
+	margin: 0 0 0.25rem;
+}
+
+.pipeline-step__meta {
+	font-size: 0.75rem;
+	line-height: 1.45;
+	color: #64748b;
 	margin: 0;
 }
 
@@ -276,6 +283,7 @@ body {
 	border-collapse: collapse;
 	font-size: 0.65rem;
 	color: #334155;
+	min-width: 860px;
 }
 
 .pipeline-profiles__table th,
@@ -296,31 +304,6 @@ body {
 
 .pipeline-profiles__table tbody tr:last-child td {
 	border-bottom: none;
-}
-
-.pipeline-profiles__download {
-	margin-top: 0.65rem;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding: 0.45rem 0.8rem;
-	border: 1px solid rgba(16, 185, 129, 0.18);
-	border-radius: 999px;
-	background: #ecfdf5;
-	color: #047857;
-	font-size: 0.68rem;
-	font-weight: 700;
-	cursor: pointer;
-	transition:
-		background-color 0.25s ease,
-		transform 0.25s ease,
-		box-shadow 0.25s ease;
-}
-
-.pipeline-profiles__download:hover {
-	background: #d1fae5;
-	transform: translateY(-1px);
-	box-shadow: 0 12px 20px -18px rgba(16, 185, 129, 0.8);
 }
 
 .pipeline-demo__progress {
