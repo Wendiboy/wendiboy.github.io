@@ -94,6 +94,52 @@ body {
 		opacity 0.4s ease;
 }
 
+.challenge-problem-badge {
+	padding: 0.65rem 0.95rem;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.82);
+	border: 1px solid rgba(248, 113, 113, 0.18);
+	box-shadow: 0 14px 28px -22px rgba(239, 68, 68, 0.55);
+	font-size: 0.83rem;
+	letter-spacing: 0.08em;
+	transform-origin: center;
+	animation: challengeBadgeFloat 3.8s ease-in-out infinite;
+}
+
+.challenge-problem-badge .material-symbols-outlined {
+	font-size: 1.35rem;
+	animation: challengeBadgeIconPulse 3.8s ease-in-out infinite;
+}
+
+@keyframes challengeBadgeFloat {
+	0%,
+	100% {
+		transform: translateY(0) scale(1);
+	}
+	50% {
+		transform: translateY(-4px) scale(1.03);
+	}
+}
+
+@keyframes challengeBadgeIconPulse {
+	0%,
+	100% {
+		transform: scale(1);
+		opacity: 0.92;
+	}
+	50% {
+		transform: scale(1.08);
+		opacity: 1;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.challenge-problem-badge,
+	.challenge-problem-badge .material-symbols-outlined {
+		animation: none;
+	}
+}
+
 /* Better diagonal layout with less overlap */
 .windows-container {
 	position: relative;
