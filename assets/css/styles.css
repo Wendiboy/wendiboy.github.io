@@ -363,8 +363,8 @@ body {
 }
 
 .audience-demo__cards {
-	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	display: flex;
+	flex-direction: column;
 	gap: 0.75rem;
 }
 
@@ -377,7 +377,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: 0.7rem;
-	min-height: 222px;
+	min-height: 0;
 }
 
 .audience-card__top {
@@ -497,6 +497,7 @@ body {
 	}
 
 	.audience-demo__cards {
-		grid-template-columns: 1fr;
+		display: flex;
+		flex-direction: column;
 	}
 }
